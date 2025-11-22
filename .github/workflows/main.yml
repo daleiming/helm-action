@@ -21,7 +21,7 @@ jobs:
         #which helm
         #docker version
         pwd
-        helm pull oci://registry-1.docker.io/bitnamicharts/kafka --version 32.4.3
+        #helm pull oci://registry-1.docker.io/bitnamicharts/kafka --version 32.4.3
         ls
         #wget https://github.com/tickstep/aliyunpan/releases/download/v0.3.7/aliyunpan-v0.3.7-linux-amd64.zip
         # 解压安装包
@@ -30,9 +30,21 @@ jobs:
         #cd aliyunpan-v0.3.7-linux-amd64
         #pwd
         #ls
-    - name: Upload file
-      uses: actions/upload-artifact@v4
-      with:
-        name: kafka
-        path: /home/runner/work/helm-action/helm-action/kafka-32.4.3.tgz
+    - name: Checkout
+      uses: actions/checkout@v5
+    - name: 'Working'
+      run: |
+        helm pull oci://registry-1.docker.io/bitnamicharts/kafka --version 32.4.3
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "test uplaod"
+        git push
+            
+    
+    #- name: Upload file
+    #  uses: actions/upload-artifact@v4
+    #  with:
+    #    name: kafka
+    #    path: /home/runner/work/helm-action/helm-action/kafka-32.4.3.tgz
         
