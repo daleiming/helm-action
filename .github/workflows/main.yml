@@ -20,4 +20,7 @@ jobs:
         ls /usr/bin
         which helm
         docker version
+        pwd
         helm pull oci://registry-1.docker.io/bitnamicharts/kafka --version 32.4.3
+        ls
+        
