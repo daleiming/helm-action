@@ -35,8 +35,8 @@ jobs:
     - name: 'Working'
       run: |
         helm pull oci://registry-1.docker.io/bitnamicharts/kafka --version 32.4.3
-        git config user.name github-actions
-        git config user.email github-actions@github.com
+        #git config user.name github-actions
+        #git config user.email github-actions@github.com
         git add .
         git commit -m "test uplaod"
         git push
