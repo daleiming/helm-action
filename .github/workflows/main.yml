@@ -17,17 +17,22 @@ jobs:
         echo "=============================================================================="
         df -hT
         echo "=============================================================================="
-        ls /usr/bin
-        which helm
-        docker version
+        #ls /usr/bin
+        #which helm
+        #docker version
         pwd
         helm pull oci://registry-1.docker.io/bitnamicharts/kafka --version 32.4.3
         ls
-        wget https://github.com/tickstep/aliyunpan/releases/download/v0.3.7/aliyunpan-v0.3.7-linux-amd64.zip
+        #wget https://github.com/tickstep/aliyunpan/releases/download/v0.3.7/aliyunpan-v0.3.7-linux-amd64.zip
         # 解压安装包
-        unzip aliyunpan-v0.3.7-linux-amd64.zip
+        #unzip aliyunpan-v0.3.7-linux-amd64.zip
         # 进入安装目录
-        cd aliyunpan-v0.3.7-linux-amd64
-        pwd
-        ls
+        #cd aliyunpan-v0.3.7-linux-amd64
+        #pwd
+        #ls
+    - name: Upload file
+      uses: actions/upload-artifact@v2
+      with:
+        name: kafka-32.4.3.tgz
+        path: /home/runner/work/helm-action/helm-action
         
