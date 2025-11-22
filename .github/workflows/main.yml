@@ -31,8 +31,8 @@ jobs:
         #pwd
         #ls
     - name: Upload file
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
-        name: kafka-32.4.3.tgz
-        path: /home/runner/work/helm-action/helm-action
+        name: kafka
+        path: /home/runner/work/helm-action/helm-action/kafka-32.4.3.tgz
         
