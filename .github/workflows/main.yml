@@ -1,0 +1,17 @@
+name: pull_hem
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    name: Pull
+    runs-on: ubuntu-latest
+    run: |
+        echo "Before freeing up disk space"
+        echo "=============================================================================="
+        df -hT
+        echo "=============================================================================="
