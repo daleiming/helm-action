@@ -32,12 +32,14 @@ jobs:
         #ls
     - name: Checkout
       uses: actions/checkout@v5
+      with:
+        token: ${{ secrets.HELM_TEST_TOKEN }}
     - name: 'Working'
       run: |
         helm pull oci://registry-1.docker.io/bitnamicharts/kafka --version 32.4.3
         git config user.name daleiming
         git config user.email daleiming@sohu.com
-        git config user.token “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”
+        #git config user.token “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”
         git add .
         git commit -m "test uplaod"
         git push
