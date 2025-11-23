@@ -37,7 +37,7 @@ jobs:
         helm pull oci://registry-1.docker.io/bitnamicharts/kafka --version 32.4.3
         git config user.name daleiming
         git config user.email daleiming@sohu.com
-        git config –global user.token “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”
+        git config user.token “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”
         git add .
         git commit -m "test uplaod"
         git push
