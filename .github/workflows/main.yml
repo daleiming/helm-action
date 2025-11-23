@@ -41,13 +41,21 @@ jobs:
         #helm pull oci://registry-1.docker.io/bitnamicharts/kafka --version 32.4.3
         docker pull bitnamicharts/kafka:sha256-12b98a1b358a6bc10c498817c801bd49e4a9d4c965af8acbe5a70764ec836997
         docker save -o bitnamicharts-kafka.tar bitnamicharts/kafka:sha256-12b98a1b358a6bc10c498817c801bd49e4a9d4c965af8acbe5a70764ec836997
-        git config user.name github-actions[bot]
-        git config user.email github-actions[bot]@users.noreply.github.com
-        #git config user.token “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”
-        git add .
-        git commit -m "test uplaod"
-        git push
-            
+        # git config user.name github-actions[bot]
+        # git config user.email github-actions[bot]@users.noreply.github.com
+        # #git config user.token “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”
+        # git add .
+        # git commit -m "test uplaod"
+        # git push
+      
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: kafka-4.1.1
+        name: Kafka 4.1.1 Docker Image
+        body: Docker image for Apache Kafka 4.1.1
+        files: kafka-4.1.1.tar
+        token: ${{ secrets.GITHUB_TOKEN }}            
     
     #- name: Upload file
     #  uses: actions/upload-artifact@v4
